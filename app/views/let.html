@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>let 块级作用域</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body>
+    <script>
+      for(var i=0;i<10;i++){
+        console.log('块级var='+i);
+      }
+      console.log('外部var=:'+i)
+      for(let j=0;j<10;j++){
+        console.log('块级let='+j);
+      }
+      console.log('外部let=:'+j)//ReferenceError: j is not defined
+    </script>
+  </body>
+</html>
