@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>字符串模版嵌入变量${all}</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body>
+  <div id="template"></div>
+    <script>
+      var all=1000;
+      document.getElementById('template').innerHTML=
+        `<ul>
+          <li>1</li>
+          <li>2</li>
+          <li>total:${all}</li>
+        </ul>`;
+    </script>
+  </body>
+</html>
