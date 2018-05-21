@@ -1,10 +1,14 @@
 var gookChildaction = {
-  watchHand() {
+  watchHand(flag) {
     console.log('孩子开始洗手');
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
-        console.log('1、洗完手了')
-        resolve('洗完手了');//返回resolev给eat()中的message
+        if (flag) {
+          console.log('1、洗完手了')
+          resolve('洗完手了');//返回resolev给eat()中的message
+        } else {
+          reject('没洗');
+        }
       }, 2000)
     })
   },
@@ -26,6 +30,10 @@ var gookChildaction = {
   }
 }
 
-gookChildaction.watchHand()
+gookChildaction.watchHand(true)
   .then(gookChildaction.eat)
   .then(gookChildaction.allFinish)
+  .catch(e => {
+    console.log(e)
+    return
+  })
